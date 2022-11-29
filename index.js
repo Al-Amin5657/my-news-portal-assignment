@@ -27,4 +27,12 @@ const displyNav = news => {
     }
 
 }
+
+const loadNewsDetails = category_id => {
+    console.log(category_id);
+    const url = `https://openapi.programming-hero.com/api/news/category/${category_id}`;
+    fetch(url)
+        .then(res => res.json())
+        .then(data => displayNews(data.data))
+}
 loadNews();
