@@ -86,4 +86,19 @@ const loadNewsDetailModal = async news_id => {
   const data = await res.json();
   displayNewsDetails(data.data[0]);
 }
+
+const displayNewsDetails = news => {
+  console.log(news);
+  const modalTitle = document.getElementById('loadNewsDetailsLabel');
+  modalTitle.innerText = news.title;
+  const newsDetails = document.getElementById('news-details');
+  newsDetails.innerHTML = `
+        <p>${news.details.slice(0, 400)}</p>
+        <h5>${news.author ? news.author.name : 'No author name found'}</h5>
+        <h5>${news.total_view ? news.total_view : 'Total view none'}</h5>
+        <h5>${news.author.published_date}</h5>
+    `;
+
+
+}
 loadNews();
