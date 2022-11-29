@@ -79,4 +79,11 @@ const displayNews = news => {
   }
 
 }
+
+const loadNewsDetailModal = async news_id => {
+  const url = `https://openapi.programming-hero.com/api/news/${news_id}`;
+  const res = await fetch(url);
+  const data = await res.json();
+  displayNewsDetails(data.data[0]);
+}
 loadNews();
