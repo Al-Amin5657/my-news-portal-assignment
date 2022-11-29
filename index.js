@@ -38,6 +38,10 @@ const loadNewsDetails = category_id => {
 
 const displayNews = news => {
   const newsContainer = document.getElementById('News-container');
+  const newsNumber = document.getElementById('news-number');
+  newsNumber.innerText = `
+    Total News ${news.length}
+  `
   newsContainer.innerHTML = ``;
 
   console.log(news);
@@ -101,4 +105,6 @@ const displayNewsDetails = news => {
 
 
 }
+
+
 loadNews();
