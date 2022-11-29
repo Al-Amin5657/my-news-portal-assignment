@@ -105,6 +105,4 @@ const displayNewsDetails = news => {
 
 
 }
-
-
 loadNews();
